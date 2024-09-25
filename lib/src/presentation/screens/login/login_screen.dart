@@ -12,14 +12,14 @@ class LoginScreen extends HookConsumerWidget {
 
     useEffect(() {
       if (authState == AuthState.authenticated) {
-        Future.microtask(() => context.go('/'));
+        Future.microtask(() => context.go(RoutePaths.homeRoute));
       }
       return null;
     }, [authState]);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text(StringConst.loginText),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -28,12 +28,12 @@ class LoginScreen extends HookConsumerWidget {
           children: [
             TextField(
               controller: userNameController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: StringConst.usernameText),
             ),
             TextField(
               controller: passwordController,
               obscureText: true,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(labelText: StringConst.passwordText),
             ),
             const SizedBox(height: 20),
             if (authState == AuthState.loading)
@@ -45,13 +45,13 @@ class LoginScreen extends HookConsumerWidget {
                   final password = passwordController.text.trim();
                   authController.login(username, password);
                 },
-                child: const Text('Login'),
+                child: const Text(StringConst.loginText),
               ),
             if (authState == AuthState.error)
               const Padding(
                 padding: EdgeInsets.only(top: 8.0),
                 child: Text(
-                  'Login failed. Please try again.',
+                  StringConst.loginFailText,
                   style: TextStyle(color: Colors.red),
                 ),
               ),

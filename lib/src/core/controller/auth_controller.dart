@@ -1,5 +1,4 @@
 
-import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -31,7 +30,6 @@ class AuthController extends StateNotifier<AuthState> {
     try {
       final token = await _authService.login(username, password);
       if (token != null) {
-        debugPrint('Token $token');
         // Save token to secure storage
         await _secureStorage.write(key: 'token', value: token);
         state = AuthState.authenticated;
