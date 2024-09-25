@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:test_project/src/domain/entities/data.dart';
 import '../../config/constants/constants.dart';
 import '../../core/service/auth_service.dart';
@@ -6,11 +5,6 @@ import '../../domain/datasources/home_datasource.dart';
 import 'package:http/http.dart' as http;
 
 class HomeDataSource extends HomeDataSources {
-  final dio = Dio(
-    BaseOptions(
-      baseUrl: AppConstants.kBaseURL,
-    ),
-  );
 
   @override
   Future<Data> getHomeData() async {
