@@ -1,16 +1,59 @@
-# test_project
+# test project
 
 A new Flutter project.
 
-## Getting Started
+#### Run
+```bash
 
-This project is a starting point for a Flutter application.
+# For IOS
+cd ios && -rm-rf Podfile.lock
 
-A few resources to get you started if this is your first Flutter project:
+#Reinstall the cocapods
+pod install
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Run the app
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Flutter Version
+Flutter 3.19.2 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 7482962148 (7 months ago) • 2024-02-27 16:51:22 -0500
+Engine • revision 04817c99c9
+Tools • Dart 3.3.0 • DevTools 2.31.1
+
+## Directory Structure
+```
+📂android
+📂ios
+📂lib
+ │───main.dart  
+ └───📂src
+     └─── 📂config
+     |    │────📂constants
+     |    │────📂routers
+     └────📂core
+     |    │────📂controller
+     |    │────📂service
+     └────📂data
+     |    │────📂datasources
+     |    │────📂repositories
+     └────📂domain
+     |    │────📂datasources
+     |    │────📂repositories
+     |    │────📂entities
+     └────📂presentations
+     |    │────📂providers
+     |    │────📂values
+     |    │────📂views
+     |    └────📂widgets
+
+```
+
+## Dependencies
+Package Name        |
+:-------------------------|
+|[hooks_riverpod](https://pub.dev/packages/hooks_riverpod) 
+|[flutter_hooks](https://pub.dev/packages/flutter_hooks)
+|[go_router](https://pub.dev/packages/go_router)
+|[flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage)
+<br/>
